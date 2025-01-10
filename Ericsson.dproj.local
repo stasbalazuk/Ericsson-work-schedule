@@ -9,6 +9,6 @@
     <Transaction>1899.12.30 00:00:00.000.615,D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\Ericsson.dproj=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android="" Android64=""/>
+		<NoProfile Android="" Android64="127.0.0.1:5555"/>
 	</ActiveMobileDevice>
 </BorlandProject>

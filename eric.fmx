@@ -12,7 +12,7 @@ object fEric: TfEric
   OnCloseQuery = FormCloseQuery
   OnDestroy = FormDestroy
   OnShow = FormShow
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object Layout1: TLayout
     Align = Top
     Size.Width = 489.000000000000000000
@@ -66,8 +66,10 @@ object fEric: TfEric
     end
     object DateView1: TDateEdit
       Date = 45667.000000000000000000
-      Position.X = 120.000000000000000000
-      Position.Y = 16.000000000000000000
+      Align = Center
+      Size.Width = 123.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 2
     end
   end
@@ -82,21 +84,22 @@ object fEric: TfEric
       Size.Width = 489.000000000000000000
       Size.Height = 572.000000000000000000
       Size.PlatformDefault = False
+      TabHeight = 49.000000000000000000
       TabIndex = 0
       TabOrder = 0
       TabPosition = PlatformDefault
       Sizes = (
         489s
-        546s
+        523s
         489s
-        546s)
+        523s)
       object uTabl0: TTabItem
         CustomIcon = <
           item
           end>
         IsSelected = True
-        Size.Width = 45.000000000000000000
-        Size.Height = 26.000000000000000000
+        Size.Width = 244.000000000000000000
+        Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
@@ -112,13 +115,13 @@ object fEric: TfEric
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Size.Width = 479.000000000000000000
-          Size.Height = 536.000000000000000000
+          Size.Height = 513.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           RowHeight = 34.000000000000000000
           OnDrawColumnCell = StringGrid1DrawColumnCell
-          Viewport.Width = 459.000000000000000000
-          Viewport.Height = 511.000000000000000000
+          Viewport.Width = 474.000000000000000000
+          Viewport.Height = 481.000000000000000000
           object StringColumn1: TStringColumn
             Header = 'Month'
             Size.Width = 89.000000000000000000
@@ -138,8 +141,8 @@ object fEric: TfEric
           item
           end>
         IsSelected = False
-        Size.Width = 40.000000000000000000
-        Size.Height = 26.000000000000000000
+        Size.Width = 245.000000000000000000
+        Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
@@ -158,11 +161,11 @@ object fEric: TfEric
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Size.Width = 479.000000000000000000
-          Size.Height = 536.000000000000000000
+          Size.Height = 513.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          Viewport.Width = 475.000000000000000000
-          Viewport.Height = 532.000000000000000000
+          Viewport.Width = 471.000000000000000000
+          Viewport.Height = 505.000000000000000000
         end
       end
     end

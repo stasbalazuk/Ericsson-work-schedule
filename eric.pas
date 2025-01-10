@@ -68,7 +68,7 @@ type
     { Private declarations }
     indMess: Integer;
     idx: Integer; uTimeWork: string;
-    WorkDayDate,WDay: TDateTime;
+    WDay: TDateTime;
     StartDate: TDateTime;  // Дата начала работы
     EndDate: TDateTime;   // Дата окончания работы
     Schedule: TMonthScheduleList;
