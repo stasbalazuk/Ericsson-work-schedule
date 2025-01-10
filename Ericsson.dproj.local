@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.751,=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.570,=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.349,C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\eric.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.349,C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.fmx=D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\eric.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.615,C:\Users\STS\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\Ericsson.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.620,=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.751,=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.349,D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\eric.fmx=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.349,D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\eric.pas=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.615,D:\Programming\Delphi\2024\MyProject\MyWorkEricsson\Ericsson.dproj=C:\Users\STS\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android="" Android64="127.0.0.1:5555"/>
+		<NoProfile Android="" Android64=""/>
 	</ActiveMobileDevice>
 </BorlandProject>

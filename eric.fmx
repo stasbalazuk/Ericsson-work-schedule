@@ -2,7 +2,7 @@ object fEric: TfEric
   Left = 0
   Top = 0
   Caption = 'stalkersts-mywork-ee'
-  ClientHeight = 583
+  ClientHeight = 672
   ClientWidth = 489
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -49,25 +49,11 @@ object fEric: TfEric
   end
   object Layout2: TLayout
     Align = Bottom
-    Position.Y = 533.000000000000000000
+    Position.Y = 622.000000000000000000
     Size.Width = 489.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object DateView1: TDateView
-      Align = Center
-      TabOrder = 0
-      AutoSize = True
-      Text = '06.11.2024'
-      TextSettings.AutoSize = True
-      TextSettings.Color.Default = claDarkred
-      TextSettings.Color.Focused = claNull
-      TextSettings.Color.Selected = claNull
-      TextSettings.Color.Enabled = claNull
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.Gravity = Center
-      DateTimeFormat = 'dd/mm/yyyy'
-    end
     object chkMessage: TCheckBox
       Align = Right
       IsChecked = True
@@ -78,26 +64,32 @@ object fEric: TfEric
       TabOrder = 1
       Text = 'Message'
     end
+    object DateView1: TDateEdit
+      Date = 45667.000000000000000000
+      Position.X = 120.000000000000000000
+      Position.Y = 16.000000000000000000
+      TabOrder = 2
+    end
   end
   object Layout3: TLayout
     Align = Client
     Size.Width = 489.000000000000000000
-    Size.Height = 483.000000000000000000
+    Size.Height = 572.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object TabControl1: TTabControl
       Align = Client
       Size.Width = 489.000000000000000000
-      Size.Height = 483.000000000000000000
+      Size.Height = 572.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 0
       TabOrder = 0
       TabPosition = PlatformDefault
       Sizes = (
         489s
-        457s
+        546s
         489s
-        457s)
+        546s)
       object uTabl0: TTabItem
         CustomIcon = <
           item
@@ -120,13 +112,13 @@ object fEric: TfEric
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Size.Width = 479.000000000000000000
-          Size.Height = 447.000000000000000000
+          Size.Height = 536.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           RowHeight = 34.000000000000000000
           OnDrawColumnCell = StringGrid1DrawColumnCell
           Viewport.Width = 459.000000000000000000
-          Viewport.Height = 422.000000000000000000
+          Viewport.Height = 511.000000000000000000
           object StringColumn1: TStringColumn
             Header = 'Month'
             Size.Width = 89.000000000000000000
@@ -166,11 +158,11 @@ object fEric: TfEric
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Size.Width = 479.000000000000000000
-          Size.Height = 447.000000000000000000
+          Size.Height = 536.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           Viewport.Width = 475.000000000000000000
-          Viewport.Height = 443.000000000000000000
+          Viewport.Height = 532.000000000000000000
         end
       end
     end
@@ -179,6 +171,12 @@ object fEric: TfEric
     OnTimer = Timer1Timer
     Left = 193
     Top = 256
+  end
+  object tmr1: TTimer
+    Enabled = False
+    OnTimer = tmr1Timer
+    Left = 193
+    Top = 320
   end
   object NotificationCenter1: TNotificationCenter
     Left = 193
