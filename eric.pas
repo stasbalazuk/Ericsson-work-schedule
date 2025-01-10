@@ -316,60 +316,7 @@ begin
   statFrm := True;
   Close;
 end;
-{
-procedure TfEric.DisplayScheduleInGrid(Schedule: TMonthScheduleList; StringGrid: TStringGrid);
-var
-  Row, AIndex: Integer; DateValue: TDateTime;
-  DaysAList, DaysCList: TArray<string>;
-begin
-  // Clear existing data and start with one row for headers
-  StringGrid.RowCount := 1; // Ensure there's a header row
-  ClearStringGrid(StringGrid); // Clear any existing content in the grid
 
-  // Check if Schedule is empty
-  if Schedule.Count = 0 then
-  begin
-    ShowMessage('No schedule data available.'); // Notify the user
-    Exit; // Exit the procedure if there are no items
-  end;
-
-  // Initialize the starting row for data
-  Row := 0; // Start adding data from Row 1 (after headers)
-  DateValue := Now;
-  // Fill the grid with data from the schedule
-  for var DayIndex := 0 to Schedule.Count - 1 do
-  begin
-    // if TryStrToDate(Schedule[DayIndex].DaysA.Text, DateValue) = False then continue;
-      // Split the DaysA and DaysC strings into arrays
-      DaysAList := Schedule[DayIndex].DaysA.Text.Split([#$D#$A]);
-      DaysCList := Schedule[DayIndex].DaysC.Text.Split([#$D#$A]);
-
-      // Ensure the StringGrid has enough rows for the new entry
-      if Row >= StringGrid.RowCount then
-        StringGrid.RowCount := Row + 1; // Increase row count if needed
-
-      // Set Month for the current row
-      StringGrid.Cells[0, Row] := Schedule[DayIndex].Month;
-
-      // Populate DaysA and DaysC
-      for AIndex := 0 to High(DaysAList) do
-      begin
-        // Ensure the StringGrid has enough rows for DaysA
-        if Row >= StringGrid.RowCount then
-          StringGrid.RowCount := Row + 1; // Increase row count if needed
-
-        StringGrid.Cells[1, Row] := DaysAList[AIndex]; // Set Day A entry
-
-        // Set Day C entry if available
-        if AIndex < Length(DaysCList) then
-          StringGrid.Cells[2, Row] := DaysCList[AIndex] // Set Day C entry
-        else
-          StringGrid.Cells[2, Row] := '-'; // Clear if no corresponding Day C entry
-
-        Row := Row + 1; // Move to the next row for the next entry
-      end;
-  end;
-end;}
 procedure TfEric.DisplayScheduleInGrid(Schedule: TMonthScheduleList; StringGrid: TStringGrid);
 var
   Row, AIndex: Integer;
@@ -385,7 +332,7 @@ try
   // Проверка, есть ли данные в расписании
   if Schedule.Count = 0 then
   begin
-    ShowMessage('Нет данных для отображения.'); // Уведомляем пользователя
+    ShowMessage('There is no data to display.'); // Уведомляем пользователя
     Exit; // Завершаем процедуру
   end;
 
@@ -473,8 +420,7 @@ begin
 end;
 function GetDayOfWeek(const uDate: TDateTime): string;
 const
-  DaysOfWeek: array[1..7] of string = ('Воскресенье', 'Понедельник', 'Вторник',
-                                       'Среда', 'Четверг', 'Пятница', 'Суббота');
+  DaysOfWeek: array[1..7] of string = ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
 var
   Day, Month, Year: Word;
   ParsedDate: TDateTime;
@@ -490,53 +436,7 @@ begin
        Result := 'Error data format';
   end;
 end;
-{
-procedure TfEric.GetLogData;
-var
-  WorkSchedule: TWorkDayList;
-  WorkDay: TWorkDay;
-  myY, myM, myD : Word;
-  i,x: Integer; xStr, dStr, sStr: string;
-begin
-  try
-    x := 0;
-    uTimeWork := '';
-    WorkSchedule := GetWorkSchedule(StartDate, EndDate);
-    try
-      // Проходим по списку и выводим данные
-      Memo1.Lines.Clear;
-      DecodeDate(Now, myY, myM, myD);
-      Timer1.Enabled := false;
-      for i := 0 to WorkSchedule.Count - 1 do
-      begin
-        if x >= 2 then x := 0;
-        Inc(x); xStr := IntToStr(x);
-        WorkDay := WorkSchedule[i];
-        if Pos('A (Day shift)',WorkDay.Shift) > 0 then WorkDay.Shift := 'A' + xStr + ' (Day shift)';
-        if Pos('C (Night Shift)',WorkDay.Shift) > 0 then WorkDay.Shift := 'C' + xStr + ' (Night Shift)';
-        if Length(Trim(IntToStr(myD))) = 1 then sStr := '0'+IntToStr(myD) else sStr := IntToStr(myD);
-           dStr := sStr+'.'+IntToStr(myM)+'.'+IntToStr(myY);
-        if dStr = DateToStr(WorkDay.Date) then begin
-           uTimeWork := TimeToStr(WorkDay.StartTime);
-           Label1.Text := 'Сегодня : '+dStr+' '+WorkDay.Shift+', Время: '+uTimeWork;
-           tmr1.Enabled := True;
-        end;
-        if Pos('Day off',WorkDay.Shift) > 0 then begin
-        WorkDay.Shift := 'Relaxing at home';
-        Memo1.Lines.Add(Format('Дата: %s, %s',
-          [DateToStr(WorkDay.Date)+' ['+GetDayOfWeek(WorkDay.Date)+']', WorkDay.Shift]))
-        end else
-        Memo1.Lines.Add(Format('Дата: %s, %s, Время: %s - %s',
-          [DateToStr(WorkDay.Date)+' ['+GetDayOfWeek(WorkDay.Date)+']', WorkDay.Shift, TimeToStr(WorkDay.StartTime), TimeToStr(WorkDay.EndTime)]));
-      end;
-    finally
-      WorkSchedule.Free;
-    end;
-  except
-    on E: Exception do
-      ShowMessage('Error: ' + E.Message);
-  end;
-end;  }
+
 //===============================================
 procedure TfEric.InitializeLogProcessing;
 begin
@@ -618,7 +518,7 @@ end;
 procedure TfEric.HandleTodayWorkDay(const WorkDay: TWorkDay);
 begin
   uTimeWork := TimeToStr(WorkDay.StartTime);
-  Label1.Text := Format('Сегодня: %s %s, Время: %s', [DateToStr(WorkDay.Date), WorkDay.Shift, uTimeWork]);
+  Label1.Text := Format('Today: %s %s, Time: %s', [DateToStr(WorkDay.Date), WorkDay.Shift, uTimeWork]);
   Timer1.Enabled := True;
 end;
 
@@ -629,11 +529,11 @@ begin
   dateStr := DateToStr(WorkDay.Date);
   dayOfWeek := GetDayOfWeek(WorkDay.Date);
   if WorkDay.Shift = 'Relaxing at home' then
-    Memo1.Lines.Add(Format('Дата: %s [%s], %s', [dateStr, dayOfWeek, WorkDay.Shift]))
+    Memo1.Lines.Add(Format('Date: %s [%s], %s', [dateStr, dayOfWeek, WorkDay.Shift]))
   else
   begin
     timeRange := Format('%s - %s', [TimeToStr(WorkDay.StartTime), TimeToStr(WorkDay.EndTime)]);
-    Memo1.Lines.Add(Format('Дата: %s [%s], %s, Время: %s', [dateStr, dayOfWeek, WorkDay.Shift, timeRange]));
+    Memo1.Lines.Add(Format('Date: %s [%s], %s, Time: %s', [dateStr, dayOfWeek, WorkDay.Shift, timeRange]));
   end;
 end;
 //===============================================
@@ -866,7 +766,7 @@ begin
     // Если время работы уже прошло, отключаем таймер
     if TimeDifference <= 0 then
     begin
-      Label1.Text := 'Рабочая смена уже началась.';
+      Label1.Text := 'The work shift has already begun!';
       tmr1.Enabled := False;
       Exit;
     end;
