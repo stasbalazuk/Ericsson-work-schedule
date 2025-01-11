@@ -566,7 +566,7 @@ begin
     // Устанавливаем начальную и конечную дату
     DateView1.Date := Now+366;
     DecodeDate(DateView1.Date, myYear, myMonth, myDay);
-    StartDate := EncodeDate(2024, 11, 9);  // Дата начала работы
+    StartDate := EncodeDate(2022, 02, 02);  // Дата начала работы
     EndDate := EncodeDate(myYear, myMonth, myDay);   // Дата окончания работы
     Label1.Text := DateToStr(Now) + ', Number of days left: ['+IntToStr(CntDay)+']';
   except
